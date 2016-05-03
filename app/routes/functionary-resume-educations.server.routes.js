@@ -1,0 +1,23 @@
+'use strict';
+
+module.exports = function(app) {
+	var users = require('../controllers/users.server.controller.js');
+	var functionaryResumeEducations = require('../controllers/functionary-resume-educations.server.controller.js');
+
+	// Functionary resume educations Routes
+	app.route('/functionary-resume-educations')
+		.get(functionaryResumeEducations.list)
+		.post(users.requiresLogin, functionaryResumeEducations.create);
+
+	app.route('/functionary-resume-educations/:functionaryResumeEducationId')
+		.get(functionaryResumeEducations.read)
+		.put(users.requiresLogin, functionaryResumeEducations.hasAuthorization, functionaryResumeEducations.update)
+		.delete(users.requiresLogin, functionaryResumeEducations.hasAuthorization, functionaryResumeEducations.delete);
+
+	/*app.route('/functionary-resume-educations/:functionary')
+		.get(functionaryResumeEducations.read);*/
+
+	// Finish by binding the Functionary resume education middleware
+	app.param('functionaryResumeEducationId', functionaryResumeEducations.functionaryResumeEducationByID);
+	//app.param('functionary', functionaryResumeEducations.educationByFunctionary);
+};

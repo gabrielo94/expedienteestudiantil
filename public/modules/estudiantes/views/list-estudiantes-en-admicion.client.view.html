@@ -1,0 +1,17 @@
+<section data-ng-controller="EstudiantesController" data-ng-init="admitidos(true)">
+    <div class="page-header">
+        <h1>Estudiantes en admisión</h1>
+    </div>
+    <div class="list-group">
+    </div>
+    <div>
+        <div class="gridStyleList" ng-grid="gridOptionsList"></div>
+    </div>
+    <br>
+    <div>
+        <input type="submit" value="Matricular estudiantes" class="btn btn-primary full-width" ng-click="matricular()">
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!estudiantes.$resolved || estudiantes.length">
+    	No hay estudiantes insertados puede crear uno <a href="/#!/estudiantes/create"> aquí</a>?
+    </div>
+</section>

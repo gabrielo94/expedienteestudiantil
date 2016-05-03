@@ -1,0 +1,46 @@
+<section data-ng-controller="EstudiantesController" ng-init="init_generaciones()">
+    <div class="page-header">
+        <h1>Consulta de estudiantes</h1>
+    </div>
+    <form class="form-horizontal" novalidate>
+        <br>
+        <br>
+        <div class="controls">
+            <select class="form-control" data-ng-model="consulta" id="consulta"
+                    ng-options="opt as opt.nombre for opt in consultas">
+            </select>
+            <br>
+        </div>
+        <div class="controls">
+            <input type="text" ng-model="filteringText" class="form-control" placeholder="Generación o Número de Cédula o Colegio de Procedencia"/>
+        </div>
+        <br>
+        <div>
+            <label class="control-label">Género</label>
+            <br>
+            <select class="form-control" data-ng-model="consulta_sexo" id="consulta_sexo"
+                    ng-options="opt as opt.sexo for opt in consultas_genero">
+            </select>
+        </div>
+        <div>
+            <label class="control-label">Grado</label>
+            <br>
+            <select class="form-control" data-ng-model="consulta_grado" id="consulta_grado"
+                    ng-options="opt as opt.grado for opt in consultas_grado">
+            </select>
+        </div>
+        <div>
+            <label class="control-label">Mostrar</label>
+            <br>
+            <select class="form-control" data-ng-model="consulta_estado" id="consulta_estado"
+                    ng-options="opt as opt.estado for opt in consultas_estado">
+            </select>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
+            <div class="gridStyleList" ng-grid="gridOptionsGeneracion"></div>
+        </div>
+    </form>
+</section>

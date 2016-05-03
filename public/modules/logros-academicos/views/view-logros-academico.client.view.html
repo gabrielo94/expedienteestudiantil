@@ -1,0 +1,18 @@
+<section data-ng-controller="LogrosAcademicosController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="logrosAcademico.name"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="(authentication.user)">
+		<a class="btn btn-primary" href="/#!/logros-academicos/{{idEstudianteUrl}}/{{cedulaEstudianteUrl}}/{{logrosAcademico._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+    <div>
+        <h4 class="list-group-item-heading">{{'Descripción: '+logrosAcademico.descripcion}}</h4>
+        <h4 class="list-group-item-heading">{{'Premio: '+logrosAcademico.premio}}</h4>
+        <h4 class="list-group-item-heading">{{'Año: '+logrosAcademico.anno}}</h4>
+    </div>
+</section>

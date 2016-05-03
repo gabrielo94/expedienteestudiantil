@@ -1,0 +1,301 @@
+<section data-ng-controller="FunctionariesController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h3 data-ng-bind="functionary.name"></h3>
+	</div>
+	<div class="pull-right">
+		<a class="btn btn-primary" href="/#!/functionaries/{{functionary._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<h2>{{functionary.firstName}} {{functionary.firstSurname}} {{functionary.secondSurname}}</h2>
+	<h3>{{'Funcionario: '+ functionary.role}}</h3>
+	<h4>{{'Estado: ' + functionary.status}}</h4>
+	<div class="row">
+		<div class="col-md-4">
+			<br/>
+			<br/>
+			<h4>
+				<h4 class="list-group-item-heading">{{'Cedula: '+functionary.identification}}</h4>
+				<h4 class="list-group-item-heading">{{'Fecha de nacimiento:' + (functionary.birthdate | date:'shortDate')}}</h4>
+				<h4 class="list-group-item-heading">{{'Telefono: '+functionary.phoneNumber}}</h4>
+				<h4 class="list-group-item-heading">{{'Celular: '+functionary.cellphoneNumber}}</h4>
+				<h4 class="list-group-item-heading">{{'Correo: '+functionary.email}}</h4>
+			</h4>
+		</div>
+
+		<div class="col-md-4">
+			<br/>
+			<br/>
+			<h4>
+				<h4 class="list-group-item-heading">{{'Estado civil: '+functionary.maritalStatus}}</h4>
+				<h4 class="list-group-item-heading">{{'Direccion: '+functionary.address}}</h4>
+			</h4>
+		</div>
+		<div>
+
+		<table class ="table table-hover table-bordered table-responsive" style= "width: 100%">
+				<tr>
+					<th>Hora</th>
+					<th>Lunes</th>
+					<th>Martes</th>
+					<th>Miercoles</th>
+					<th>Jueves</th>
+					<th>Viernes</th>
+				</tr class="success">
+					<td>7:00</td>
+					<td> <select class="form-control align-field" data-ng-model="schedule0" id="schedule_0"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[0]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule1" id="schedule_1"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[1]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule2" id="schedule_2"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[2]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule3" id="schedule_3"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[3]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule4" id="schedule_4"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[4]}}</select></td>
+				</tr>
+				<tr>
+					<td>8:00</td>
+					<td> <select class="form-control align-field" data-ng-model="schedule5" id="schedule_5"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[5]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule6" id="schedule_6"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[6]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule7" id="schedule_7"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[7]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule8" id="schedule_8"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[8]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule9" id="schedule_9"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[9]}}</select></td>
+				</tr>
+				<tr>
+					<td>9:00</td>
+					<td> <select class="form-control align-field" data-ng-model="schedule10" id="schedule_10"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[10]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule11" id="schedule_11"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[11]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule12" id="schedule_12"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[12]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule13" id="schedule_13"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[13]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule14" id="schedule_14"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[14]}}</select></td>
+				</tr>
+				<tr>
+					<td>10:00</td>
+					<td> <select class="form-control align-field" data-ng-model="schedule15" id="schedule_15"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[15]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule16" id="schedule_16"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[16]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule17" id="schedule_17"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[17]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule18" id="schedule_18"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[18]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule19" id="schedule_19"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[19]}}</select></td>
+				</tr>
+				<tr>
+					<td>11:00</td>
+					<td> <select class="form-control align-field" data-ng-model="schedule20" id="schedule_20"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[20]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule21" id="schedule_21"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[21]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule22" id="schedule_22"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[22]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule23" id="schedule_23"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[23]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule24" id="schedule_24"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[24]}}</select></td>
+				</tr>
+				<tr>
+					<td>12:00</td>
+					<td> <select class="form-control align-field" data-ng-model="schedule25" id="schedule_25"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[25]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule26" id="schedule_26"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[26]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule27" id="schedule_27"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[27]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule28" id="schedule_28"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[28]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule29" id="schedule_29"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[29]}}</select></td>
+				</tr>
+				<tr>
+					<td>1:00</td>
+					<td> <select class="form-control align-field" data-ng-model="schedule30" id="schedule_30"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[30]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule31" id="schedule_31"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[31]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule32" id="schedule_32"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[32]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule33" id="schedule_33"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[33]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule34" id="schedule_34"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[34]}}</select></td>
+				</tr>
+				<tr>
+					<td>2:00</td>
+					<td> <select class="form-control align-field" data-ng-model="schedule35" id="schedule_35"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[35]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule36" id="schedule_36"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[36]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule37" id="schedule_37"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[37]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule38" id="schedule_38"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[38]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule39" id="schedule_39"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[39]}}</select></td>
+				</tr>
+				<tr>
+					<td>3:00</td>
+					<td> <select class="form-control align-field" data-ng-model="schedule40" id="schedule_40"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[40]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule41" id="schedule_41"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[41]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule42" id="schedule_42"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[42]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule43" id="schedule_43"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[43]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule44" id="schedule_44"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[44]}}</select></td>
+				</tr>
+				<tr>
+					<td>4:00</td>
+					<td> <select class="form-control align-field" data-ng-model="schedule45" id="schedule_45"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[45]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule46" id="schedule_46"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[46]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule47" id="schedule_47"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[47]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule48" id="schedule_48"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[48]}}</select></td>
+					<td> <select class="form-control align-field" data-ng-model="schedule49" id="schedule_49"
+                                ng-options="name as name.name for name in subjects_list">
+                        {{functionary.schedule[49]}}</select></td>
+				</tr>
+			</table>
+			<button class="btn btn-lg btn-success" ng-click="addschedule()">Guardar</button> 
+			<br/>
+		<br/>
+	</div>
+
+	</div>
+
+	<div class="container">
+		<div ng-controller="FunctionaryResumeEducationsController" data-ng-init="findByFunctionary(functionary)">
+			<div data-ng-repeat="education in functionaryEducations">
+				<div class="container">
+					<div class="container-border no-padding">
+						<a class="list-group-item">
+							<div>
+								<span class="pull-right">
+									<button class="btn btn-default" ng-click="remove(education);">
+										<i class="glyphicon glyphicon-trash"></i>
+									</button>
+								</span>
+								<div ng-click="modalUpdateEducation('lg', education, functionaryEducations)">
+									<h4>
+										<h4 class="list-group-item-heading">{{'Universidad: ' + education.schoolName}}</h4>
+										<h4 class="list-group-item-heading">{{'Grado: ' + education.degree}}</h4>
+										<h4 class="list-group-item-heading">{{'Descripcion: ' + education.description}}</h4>
+										<h4 class="list-group-item-heading">{{'Fecha: ' + education.attendedStartDate + ' - ' + education.attendedEndDate}}</h4>
+									</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<br>
+			</div>
+			<div class="form-group">
+				<button ng-click="modalAddEducation('lg', functionary, functionaryEducations)" class="btn btn-primary align-field"> Agregar educación</button>
+			</div>
+		</div>
+		<div ng-controller="FunctionaryResumeExperiencesController" data-ng-init="findByFunctionary(functionary)">
+			<div ng-repeat="xp in functionaryExperiences" >
+				<div class="container">
+					<div class="container-border no-padding">
+						<a class="list-group-item">
+							<div>
+								<span class="pull-right">
+									<button class="btn btn-default" ng-click="remove(xp);">
+										<i class="glyphicon glyphicon-trash"></i>
+									</button>
+								</span>
+								<div ng-click="modalUpdateWorkExperience('lg', xp, functionaryExperiences)">
+									<h4>
+										<h4 class="list-group-item-heading">{{'Compania: ' + xp.companyName}}</h4>
+										<h4 class="list-group-item-heading">{{'Ubicacion de la compania: ' + xp.companyLocation}}</h4>
+										<h4 class="list-group-item-heading">{{'Rol: ' + xp.functionaryTitle}}</h4>
+										<h4 class="list-group-item-heading">{{'Fecha: ' + xp.attendedStartDate + ' - ' + xp.attendedEndDate}}</h4>
+									</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<br>
+			</div>
+			<div class="form-group">
+				<button ng-click="modalAddWorkExperience('lg', functionary, functionaryExperiences)" class="btn btn-primary align-field"> Agregar experiencia</button>
+			</div>
+		</div>
+		
+	</div>
+
+
+
+
+
+</section>

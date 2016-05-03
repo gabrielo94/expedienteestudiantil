@@ -1,0 +1,49 @@
+<section data-ng-controller="FunctionaryResumeExperiencesController">
+    <div class="modal-header">
+        <h1 class="modal-title">Nueva experiencia de trabajo</h1>
+    </div>
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="modal-body">
+                    <label class="control-label" for="companyname">Compa&#241;ia</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="companyName" id="companyname" class="form-control" required>
+                    </div>
+
+                    <label class="control-label" for="functionarytitle">Posicion de trabajo</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="functionaryTitle" id="functionarytitle" class="form-control" required>
+                    </div>
+
+                    <label class="control-label" for="companylocation">Ubicacion</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="companyLocation" id="companylocation" class="form-control" required>
+                    </div>
+
+                    <label class="control-label" for="attendedstartdate">A&#241;o de inicio</label>
+                    <div class="controls">
+                        <select class="form-control" data-ng-model="attendedStartDate" id="attendedstartdate"
+                                ng-options="year as year.year for year in optionsYearRange" required>
+                            <option selected="selected">3</option>
+                        </select>
+                    </div>
+
+                    <label class="control-label" for="attendedenddate">A&#241;o final</label>
+                    <div class="controls">
+                        <select class="form-control" data-ng-model="attendedEndDate" id="attendedenddate"
+                                ng-options="year as year.year for year in optionsYearRange" required>
+                        </select>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="submit" value="Agregar" class="btn btn-success">
+                        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+                    </div>
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

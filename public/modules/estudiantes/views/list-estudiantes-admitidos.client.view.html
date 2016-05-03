@@ -1,0 +1,15 @@
+<section data-ng-controller="EstudiantesController" data-ng-init="admitidos(false)">
+    <div class="page-header">
+        <h1>Estudiantes admitidos</h1>
+    </div>
+    <div>
+        <div class="gridStyleList" ng-grid="gridOptionsList"></div>
+    </div>
+    <br>
+    <div>
+        <input type="submit" value="Trasladar estudiantes" class="btn btn-primary full-width" ng-click="trasladar()">
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!estudiantes.$resolved || estudiantes.length">
+    	No hay estudiantes insertados puede crear uno <a href="/#!/estudiantes/create"> aquí</a>?
+    </div>
+</section>

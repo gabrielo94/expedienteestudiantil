@@ -1,0 +1,154 @@
+<section data-ng-controller="EstudiantesController" data-ng-init="findOne(true)">
+    <div class="page-header">
+        <h1>Editar Estudiante</h1>
+    </div>
+    <div class="col-xs-12 center-div">
+        <form class="form-horizontal" data-ng-submit="update()">
+            <fieldset>
+                <div class="form-group">
+                    <div class="controls">
+                        <label class="control-label" for="name">Nombre del estudiante</label>
+                    </div>
+                    <div class="form-group col-xs-4 no-margin-bottom">
+                        <div class="controls">
+                            <input type="text" data-ng-model="estudiante.name" id="name" class="form-control align-field" placeholder="Nombre" required>
+                        </div>
+                    </div>
+                <div class="form-group col-xs-4 no-margin-bottom">
+                    <div class="controls">
+                        <input type="text" data-ng-model="estudiante.primer_apellido" id="primer_apellido" class="form-control align-field" placeholder="Primer apellido" required>
+                    </div>
+                </div>
+                    <div class="form-group col-xs-4 no-margin-bottom">
+                    <div class="controls">
+                        <input type="text" data-ng-model="estudiante.segundo_apellido" id="segundo_apellido" class="form-control align-field" placeholder="Segundo apellido" required>
+                    </div>
+                    </div>
+                    <label class="control-label" for="name">Fecha de nacimiento</label>
+                    <!--<div class="controls">
+                        <input type="date" data-ng-model="estudiante.fecha_de_nacimiento" id="fecha_de_nacimiento" class="form-control align-field" required>
+                    </div>-->
+                    <div class="controls">
+                        <input id="fecha_de_nacimiento" type="text" placeholder='dd/mm/yyyy' data-ng-model="fecha_de_nacimiento" class="form-control align-field"required />
+                    </div>
+                    <label class="control-label" for="name">Cédula o número de pasaporte</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="estudiante.nacionalidad" id="nacionalidad" class="form-control align-field"
+                               onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                    </div>
+                    <label class="control-label" for="name">Sexo</label>
+                    <div class="controls">
+                        <select class="form-control align-field" data-ng-model="sexo" id="sexo"
+                                ng-options="opt as opt.nombre for opt in sexos">
+                        </select>
+                    </div>
+                    <div class="controls">
+                        <label class="control-label" for="name">Teléfonos</label>
+                    </div>
+                    <div class="form-group col-xs-6 no-margin-bottom">
+
+                        <div class="controls">
+                            <input type="text" data-ng-model="estudiante.telefono_casa" id="telefono_casa" class="form-control align-field" placeholder="Tel. Hogar"
+                                   ng-minlength="8" maxlength="8" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6 no-margin-bottom">
+                        <div class="controls">
+                        <input type="text" data-ng-model="estudiante.celular" id="celular" class="form-control align-field" placeholder="Celular"
+                               ng-minlength="8" maxlength="8" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                        </div>
+                    </div>
+                    <label class="control-label" for="name">Correo electronico</label>
+                    <div class="controls">
+                        <input type="email" data-ng-model="estudiante.correo" id="correo" class="form-control align-field" placeholder="Correo" required>
+                    </div>
+                    <div class="form-group col-xs-3 no-margin-bottom">
+                        <label class="control-label" for="name">Provincia</label>
+                        <div class="controls">
+                            <select class="form-control align-field" data-ng-model="provincia" id="provincia" ng-change="provincia_change()"
+                                    ng-options="opt as opt.nombre for opt in options">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-3 no-margin-bottom">
+                        <label class="control-label" for="name">Cantón</label>
+                        <div class="controls">
+                            <select class="form-control align-field" data-ng-model="canton" id="canton" ng-disabled="!provincia" ng-change="canton_change()"
+                                    ng-options="opt as opt.nombre for opt in provincia.cantones">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-3 no-margin-bottom">
+                        <label class="control-label" for="name">Distrito</label>
+                        <div class="controls">
+                            <select class="form-control align-field" data-ng-model="distrito" id="distrito" ng-disabled="!canton"
+                                    ng-options="opt as opt.nombre for opt in canton.distritos">
+                            </select>
+                        </div>0
+                    </div>
+                    <div class="form-group col-xs-4 no-margin-bottom">
+                        <label class="control-label" for="name">Barrio</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="estudiante.barrio" id="barrio" class="form-control align-field-barrio" placeholder="Barrio" required>
+                        </div>
+                    </div>
+                    <label class="control-label" for="name">Dirección exacta</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="estudiante.direccion_exacta" id="direccion_exacta" class="form-control align-field" placeholder="Dirección exacta" required>
+                    </div>
+                    <label class="control-label" for="name">Colegio de procedencia</label>
+                    <div class="controls">
+                        <select class="form-control align-field" data-ng-model="colegio_procedencia" id="colegio_procedencia"
+                                ng-options="high_school as high_school.name for high_school in high_schools_list">
+                        </select>
+                    </div>
+                    <div ng-if="colegio_procedencia.name == 'Otro'" class="animate-if" class="form-group col-xs-4 no-margin-bottom">
+                        <label class="control-label" for="name">Digite el colegio de procendecia</label>
+                        <div class="controls">
+                            <input type="text" ng-model="$parent.colegio_procedencia_nuevo" id="colegio_procedencia_nuevo" class="form-control align-field">
+                        </div>
+                    </div>
+                    <label class="control-label" for="name">Adecuación significativa</label>
+                    <div class="controls">
+                        <select class="form-control align-field" data-ng-model="adSignificativa" id="adecuacion_significativa"
+                                ng-options="opt as opt.nombre for opt in adecuaciones">
+                        </select>
+
+                    </div>
+                    <label class="control-label" for="name">Adecuación no significativa</label>
+                    <div class="controls">
+                        <select class="form-control align-field" data-ng-model="adNoSignificativa" id="adecuacion_nsignificativa"
+                                ng-options="opt as opt.nombre for opt in adecuaciones">
+                        </select>
+                    </div>
+                    <div class="controls">
+                        <label class="control-label" for="name">Foto del estudiante</label>
+                    </div>
+                    <span class="btn btn-default btn-file">
+                        Seleccionar foto <input name="filefield" type="file" ng-file-select ng-file-change="onFileSelect($files)">
+                    </span>
+                    <br/>
+                    <div class="controls">
+                        <label class="control-label" for="name">Notas del estudiante</label>
+                        <div class="form-group no-margin-bottom">
+                            <div class="nota-header nota-noveno-header no-margin-bottom grid-align">Notas de noveno</div>
+                        </div>
+                        <div class="gridStyle ngGridNotesSON" ng-grid="gridOptionsSON"></div>
+                    </div>
+                    <br/>
+                     <div >{{ calcularPromedioSON() }}</div>
+                    <div>
+                        <p id="promediogeneral"> </p>
+                    </div>
+                <div class="form-group">
+                    <input type="submit" value="Editar estudiante" class="btn btn-primary align-field">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+                </div>
+            </fieldset>
+        </form>
+    </form>
+    </div>
+</section>
