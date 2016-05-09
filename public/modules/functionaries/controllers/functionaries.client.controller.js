@@ -83,6 +83,76 @@ angular.module('functionaries').controller('FunctionariesController', ['$scope',
 							  	{name: 'Religi\u00F3n'},
 							  	{name: 'C\u00EDvica'},
 							  	{name: 'Educ. F\u00EDsica'}];
+		$scope.schedule0 = $scope.subjects_list[0];
+		$scope.schedule1 = $scope.subjects_list[0];
+		$scope.schedule2 = $scope.subjects_list[0];
+		$scope.schedule3 = $scope.subjects_list[0];
+		$scope.schedule4 = $scope.subjects_list[0];
+		$scope.schedule5 = $scope.subjects_list[0];
+		$scope.schedule6 = $scope.subjects_list[0];
+		$scope.schedule7 = $scope.subjects_list[0];
+		$scope.schedule8 = $scope.subjects_list[0];
+		$scope.schedule9 = $scope.subjects_list[0];
+		$scope.schedule10 = $scope.subjects_list[0];
+		$scope.schedule11 = $scope.subjects_list[0];
+		$scope.schedule12 = $scope.subjects_list[0];
+		$scope.schedule13 = $scope.subjects_list[0];
+		$scope.schedule14 = $scope.subjects_list[0];
+		$scope.schedule15 = $scope.subjects_list[0];
+		$scope.schedule16 = $scope.subjects_list[0];
+		$scope.schedule17 = $scope.subjects_list[0];
+		$scope.schedule18 = $scope.subjects_list[0];
+		$scope.schedule19 = $scope.subjects_list[0];
+		$scope.schedule20 = $scope.subjects_list[0];
+		$scope.schedule21 = $scope.subjects_list[0];
+		$scope.schedule22 = $scope.subjects_list[0];
+		$scope.schedule23 = $scope.subjects_list[0];
+		$scope.schedule24 = $scope.subjects_list[0];
+		$scope.schedule25 = $scope.subjects_list[0];
+		$scope.schedule26 = $scope.subjects_list[0];
+		$scope.schedule27 = $scope.subjects_list[0];
+		$scope.schedule28 = $scope.subjects_list[0];
+		$scope.schedule29 = $scope.subjects_list[0];
+		$scope.schedule30 = $scope.subjects_list[0];
+		$scope.schedule31 = $scope.subjects_list[0];
+		$scope.schedule32 = $scope.subjects_list[0];
+		$scope.schedule33 = $scope.subjects_list[0];
+		$scope.schedule34 = $scope.subjects_list[0];
+		$scope.schedule35 = $scope.subjects_list[0];
+		$scope.schedule36 = $scope.subjects_list[0];
+		$scope.schedule37 = $scope.subjects_list[0];
+		$scope.schedule38 = $scope.subjects_list[0];
+		$scope.schedule39 = $scope.subjects_list[0];
+		$scope.schedule40 = $scope.subjects_list[0];
+		$scope.schedule41 = $scope.subjects_list[0];
+		$scope.schedule42 = $scope.subjects_list[0];
+		$scope.schedule43 = $scope.subjects_list[0];
+		$scope.schedule44 = $scope.subjects_list[0];
+		$scope.schedule45 = $scope.subjects_list[0];
+		$scope.schedule46 = $scope.subjects_list[0];
+		$scope.schedule47 = $scope.subjects_list[0];
+		$scope.schedule48 = $scope.subjects_list[0];
+		$scope.schedule49 = $scope.subjects_list[0];
+		$scope.schedule50 = $scope.subjects_list[0];
+		$scope.schedule51 = $scope.subjects_list[0];
+		$scope.schedule52 = $scope.subjects_list[0];
+		$scope.schedule53 = $scope.subjects_list[0];
+		$scope.schedule54 = $scope.subjects_list[0];
+		$scope.schedule55 = $scope.subjects_list[0];
+		$scope.schedule56 = $scope.subjects_list[0];
+		$scope.schedule57 = $scope.subjects_list[0];
+		$scope.schedule58 = $scope.subjects_list[0];
+		$scope.schedule59 = $scope.subjects_list[0];
+		$scope.schedule60 = $scope.subjects_list[0];
+		$scope.schedule61 = $scope.subjects_list[0];
+		$scope.schedule62 = $scope.subjects_list[0];
+		$scope.schedule63 = $scope.subjects_list[0];
+		$scope.schedule64 = $scope.subjects_list[0];
+		$scope.schedule65 = $scope.subjects_list[0];
+		$scope.schedule66 = $scope.subjects_list[0];
+		$scope.schedule67 = $scope.subjects_list[0];
+		$scope.schedule68 = $scope.subjects_list[0];
+		$scope.schedule69 = $scope.subjects_list[0];
 
 		// Remove existing Functionary
 		$scope.remove = function(event,functionary) {
@@ -213,6 +283,46 @@ angular.module('functionaries').controller('FunctionariesController', ['$scope',
 			e = document.getElementById("schedule_48");
 			schedulelist.push(e.options[e.selectedIndex].text);
 			e = document.getElementById("schedule_49");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_50");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_51");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_52");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_53");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_54");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_55");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_56");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_57");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_58");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_59");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_60");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_61");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_62");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_63");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_64");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_65");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_66");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_67");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_68");
+			schedulelist.push(e.options[e.selectedIndex].text);
+			e = document.getElementById("schedule_69");
 			schedulelist.push(e.options[e.selectedIndex].text);
 			$scope.functionary.schedule=schedulelist;
 			$scope.update();
@@ -486,6 +596,106 @@ angular.module('functionaries').controller('FunctionariesController', ['$scope',
 						$scope.schedule49 = subject;
 					}
 				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[50] === subject.name){
+						$scope.schedule50 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[51] === subject.name){
+						$scope.schedule51 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[52] === subject.name){
+						$scope.schedule52 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[53] === subject.name){
+						$scope.schedule53 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[54] === subject.name){
+						$scope.schedule54 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[55] === subject.name){
+						$scope.schedule55 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[56] === subject.name){
+						$scope.schedule56 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[57] === subject.name){
+						$scope.schedule57 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[58] === subject.name){
+						$scope.schedule58 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[59] === subject.name){
+						$scope.schedule59 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[60] === subject.name){
+						$scope.schedule60 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[61] === subject.name){
+						$scope.schedule61 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[62] === subject.name){
+						$scope.schedule62 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[63] === subject.name){
+						$scope.schedule63 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[64] === subject.name){
+						$scope.schedule64 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[65] === subject.name){
+						$scope.schedule65 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[66] === subject.name){
+						$scope.schedule66 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[67] === subject.name){
+						$scope.schedule67 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[68] === subject.name){
+						$scope.schedule68 = subject;
+					}
+				});
+				$scope.subjects_list.forEach(function(subject){
+					if(functionary.schedule[69] === subject.name){
+						$scope.schedule69 = subject;
+					}
+				});
 			});
 		};
 
@@ -503,3 +713,4 @@ angular.module('functionaries').controller('FunctionariesController', ['$scope',
 		};
 	}
 ]);
+
