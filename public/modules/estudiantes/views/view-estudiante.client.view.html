@@ -20,7 +20,7 @@
             <br/>
             <br/>
             <h4 class="list-group-item-heading">{{'Cédula: '+estudiante.nacionalidad}}</h4>
-            <h4 class="list-group-item-heading">{{'Fecha de nacimiento: '+estudiante.fecha_de_nacimiento}}</h4>
+            <h4 class="list-group-item-heading">{{'Fecha de nacimiento: '+ (estudiante.fecha_de_nacimiento.replace("00:00:00","06:00:00") | date:'dd/MM/yyyy')}}</h4>
             <h4 class="list-group-item-heading">{{'Sexo: '+sexo.nombre}}</h4>
             <h4 class="list-group-item-heading">{{'Teléfono: '+estudiante.telefono_casa}}</h4>
             <h4 class="list-group-item-heading">{{'Celular: '+estudiante.celular}}</h4>

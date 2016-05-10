@@ -52,7 +52,7 @@ var FunctionarySchema = new Schema({
 	},
 
 	birthdate: {
-		type: String,
+		type: Date,
 		required: 'Por favor la fecha de nacimiento del funcionario',
 		trim: true
 	},
@@ -86,7 +86,7 @@ var FunctionarySchema = new Schema({
 	},
 
 	hireDate: {
-		type: String,
+		type: Date,
 		default: '',
 		required: 'Por favor llene la fecha de contratacion del funcionario',
 		trim: true

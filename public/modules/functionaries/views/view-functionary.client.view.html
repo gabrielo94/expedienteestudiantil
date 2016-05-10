@@ -19,7 +19,7 @@
 			<br/>
 			<h4>
 				<h4 class="list-group-item-heading">{{'Cedula: '+functionary.identification}}</h4>
-				<h4 class="list-group-item-heading">{{'Fecha de nacimiento:' + (functionary.birthdate | date:'shortDate')}}</h4>
+				<h4 class="list-group-item-heading">{{'Fecha de nacimiento: ' + (functionary.birthdate.replace("00:00:00","06:00:00") | date:'dd/MM/yyyy')}}</h4>
 				<h4 class="list-group-item-heading">{{'Telefono: '+functionary.phoneNumber}}</h4>
 				<h4 class="list-group-item-heading">{{'Celular: '+functionary.cellphoneNumber}}</h4>
 				<h4 class="list-group-item-heading">{{'Correo: '+functionary.email}}</h4>

@@ -38,7 +38,7 @@ var EstudianteSchema = new Schema({
         trim: true
     },
     fecha_de_nacimiento: {
-        type: String,
+        type: Date,
         required: 'Fecha de nacimiento del estudiante',
         trim: true
     },

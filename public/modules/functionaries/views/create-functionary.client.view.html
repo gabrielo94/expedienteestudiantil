@@ -26,9 +26,14 @@
                         <input type="text" data-ng-model="identification" id="identification" class="form-control align-field" required>
                     </div>
 
-                    <label class="control-label" for="birthdate">Fecha de nacimiento</label>
-                    <div class="controls">
-                        <input id="birthdate" type="text" placeholder='dd/mm/yyyy' data-ng-model="birthdate" class="form-control align-field"required />
+                    <div class="controls form-inline">
+                        <br>
+                        <label class="control-label" for="birthdate">Fecha de nacimiento: </label>
+                        <input id="birthdate" type="date" data-ng-model="birthdate" class="date" required />
+                        <label class="control-label" for="hiredate">Fecha de contratacion: </label>
+                        <input id="hireDate" type="date" data-ng-model="hireDate" class="date" required />
+                        <br>
+                        <br>
                     </div>
 
                     <label class="control-label" for="maritalstatus">Estado Civil</label>
@@ -66,12 +71,6 @@
                                 ng-options="role as role.role for role in optionsFunctionaryRoles">
                         </select>
                     </div>
-
-                    <label class="control-label" for="hiredate">Fecha de contratacion</label>
-                    <div class="controls">
-                        <input id="hireDate" type="text" placeholder='dd/mm/yyyy' data-ng-model="hireDate" class="form-control align-field"required />
-                    </div>
-
                     <label class="control-label" for="status">Estado</label>
                     <div class="controls">
                         <select class="form-control align-field" data-ng-model="status" id="status"
