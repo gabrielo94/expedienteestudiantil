@@ -1,6 +1,6 @@
 <section data-ng-controller="FunctionaryResumeEducationsController">
     <div class="modal-header">12
-        <h1 class="modal-title">Nueva educacion</h1>
+        <h1 class="modal-title">Nueva educación</h1>
     </div>
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
@@ -15,7 +15,7 @@
                         <input type="text" data-ng-model="degree" id="degree" class="form-control" required>
                     </div>
 
-                    <label class="control-label" for="description">Descripcion</label>
+                    <label class="control-label" for="description">Descripción</label>
                     <div class="controls">
                         <input type="text" data-ng-model="description" id="description" class="form-control" required>
                     </div>
@@ -28,7 +28,7 @@
                         </select>
                     </div>
 
-                    <label class="control-label" for="attendedenddate">A&#241;o de graduacion</label>
+                    <label class="control-label" for="attendedenddate">A&#241;o de graduación</label>
                     <div class="controls">
                         <select class="form-control" data-ng-model="attendedEndDate" id="attendedenddate"
                                 ng-options="year as year.year for year in optionsYearRange" required>
