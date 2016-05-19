@@ -82,7 +82,7 @@
 .nota-header{
     padding-top: 5px;
     height: 30px;
-    width: 241px;
+    width: 232px
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
@@ -91,9 +91,15 @@
     background-color: #eae8e8;
     border: 1px solid #d4d4d4;
 }
-
+.nota-materia-header{
+    width:212px;
+}
+.nota-undecimo-header{
+    width:241px;
+}
 .nota-decimo-header{
-    margin-left: 503px;
+    margin-left: 290px;
+    width: 242px;
 }
 .nota-noveno-header{
     margin-left: 590px;
@@ -118,7 +124,7 @@
     background-color: #e6edec;
     padding-top: 5px;
     height: 30px;
-    width: 241px;
+    width: 319px;
     border: 1px solid #d4d4d4;
 }
 
