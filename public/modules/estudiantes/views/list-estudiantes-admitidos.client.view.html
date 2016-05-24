@@ -6,9 +6,30 @@
         <div class="gridStyleList" ng-grid="gridOptionsList"></div>
     </div>
     <br>
-    <div>
-        <input type="submit" value="Trasladar estudiantes" class="btn btn-primary full-width" ng-click="trasladar()">
+
+    <div class="modal fade" id="trasladarPopUp" name="trasladarPopUp" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p>Trasladar estudiante</p>
+                </div>
+                <div class="modal-body">
+                  <label for="colegioDestino">Colegio Destino:</label>
+                  <select class="form-control align-field" data-ng-model="colegioDestino" id="colegioDestinoList"
+                                ng-options="high_school as high_school.name for high_school in high_schools_list">
+                  </select>
+                  <label for="motivoTraslado">Motivo del traslado:</label>
+                  <input class="form-control align-field" type="text" id="motivoTraslado">
+                  <label for="fechaTraslado">Fecha del traslado:</label>
+                  <input class="date" type="date" id="fechaTraslado">
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Trasladar" class="btn btn-info" data-dismiss="modal" ng-click="trasladar()">
+                </div>
+            </div>
+        </div>
     </div>
+    
     <div class="alert alert-warning text-center" data-ng-hide="!estudiantes.$resolved || estudiantes.length">
     	No hay estudiantes insertados puede crear uno <a href="/#!/estudiantes/create"> aquí</a>?
     </div>

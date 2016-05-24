@@ -743,7 +743,7 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
                     columnDefs: [{ field: 'name', displayName:'Nombre'},
                         { field: 'nacionalidad', displayName:'Cédula'},
                         { field: 'anno_ingreso', displayName:'Año',cellTemplate: '<div class="ngCellText">{{row.getProperty(col.field) | anno}}</div>'},
-                        { field: 'traladado', displayName:'Trasladar', cellTemplate: '<input type="checkbox" ng-model="row.entity.traladado">'},
+                        { field: 'traladado', displayName:'Trasladar', cellTemplate: '<button class="btn btn-info"><a href= "#trasladarPopUp" ng-click="enviarEstudiante(row.entity)" data-toggle="modal">Trasladar</a></button>'},
                         { field: '_id', displayName:'Ver', cellTemplate: '<a data-ng-href="#!/estudiantes/{{row.entity._id}}">ver</a>'}]
                 };
             }
@@ -825,16 +825,26 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
             });
         };
 
+        var trasladandoE;
+
+        $scope.enviarEstudiante = function(estudiante){
+            alert("Hello");
+            trasladandoE = estudiante;
+        }
+
         $scope.trasladar = function(){
-            var estudiantes = $scope.estudiantes;
-            angular.forEach(estudiantes, function (estudiante) {
-                if(estudiante.traladado) {
-                    estudiante.fecha_traladado = new Date(). getDate();
-                    Estudiantes.update({ estudianteId: estudiante._id }, estudiante).$promise.then(function (estudiante) {
-                        location.reload();
-                    });
-                }
-            });
+            var estudiante = trasladandoE;
+            alert("Hello! I am an alert box!!");
+            estudiante.traladado = true;
+            var dat = document.getElementById("fechaTraslado");
+            estudiante.fecha_traladado = dat.value;
+            var col = document.getElementById("colegioDestinoList");
+            estudiante.destino_traladado = col.options[col.selectedIndex].text;
+            var mot = document.getElementById("motivoTraslado");
+            estudiante.motivo_traladado = mot.value;
+            Estudiantes.update({ estudianteId: estudiante._id }, estudiante).$promise.then(function (estudiante) {
+                location.reload();
+            });    
         };
 
         $scope.asignar_notas = function(){

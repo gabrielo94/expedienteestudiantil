@@ -112,6 +112,14 @@ var EstudianteSchema = new Schema({
         type: Date,
         trim: true
     },
+    destino_traladado: {
+        type: String,
+        trim: true
+    },
+    motivo_traladado: {
+        type: String,
+        trim: true
+    },
     colegio_procedencia: {
         type: String,
         required: 'Nombre del colegio de procedencia',
