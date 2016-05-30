@@ -819,13 +819,11 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
         var trasladandoE;
 
         $scope.enviarEstudiante = function(estudiante){
-            alert("Hello");
             trasladandoE = estudiante;
         }
 
         $scope.trasladar = function(){
             var estudiante = trasladandoE;
-            alert("Hello! I am an alert box!!");
             estudiante.traladado = true;
             var dat = document.getElementById("fechaTraslado");
             estudiante.fecha_traladado = dat.value;
