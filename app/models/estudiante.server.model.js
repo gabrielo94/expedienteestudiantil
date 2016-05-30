@@ -44,7 +44,7 @@ var EstudianteSchema = new Schema({
     },
     telefono_casa: {
         type: String,
-        required: 'Teléfono de la casa del estudiante',
+        //required: 'Teléfono de la casa del estudiante',
         trim: true
     },
     celular: {
