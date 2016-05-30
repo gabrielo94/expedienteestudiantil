@@ -754,14 +754,12 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
             var promedio_decimo_segundo_semestre = 0;
             var promedio_undecimo_primer_semestre = 0;
             var promedio_undecimo_segundo_semestre = 0;
-            var promedio_decimo=0;
-            var promedio_undecimo=0;
-
+            var espaP;
             var promedio_row = 0;
             if($scope.notas_decimo_undecimo.length !== 0) {
                 angular.forEach($scope.notas_decimo_undecimo, function (nota) {
                     if (nota.curso !== 'Promedio') {
-                        if(nota.nota_decimo_primer_semestre === undefined){
+                        if(nota.nota_decimo_primer_semestre === undefined){     
                             nota.nota_decimo_primer_semestre = 0;
                         }
                         if(nota.nota_decimo_segundo_semestre === undefined){
@@ -782,33 +780,26 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
                         
                         nota.promedio_decimo=(nota.nota_decimo_primer_semestre+nota.nota_decimo_segundo_semestre)/2;
                         nota.promedio_undecimo=(nota.nota_undecimo_primer_semestre+nota.nota_undecimo_segundo_semestre)/2;
-
+                        
                         promedio_decimo_primer_semestre += nota.nota_decimo_primer_semestre;
                         promedio_decimo_segundo_semestre += nota.nota_decimo_segundo_semestre;
                         promedio_undecimo_primer_semestre += nota.nota_undecimo_primer_semestre;
                         promedio_undecimo_segundo_semestre += nota.nota_undecimo_segundo_semestre;
-                        $scope.tenth_annual_average = ((promedio_decimo_primer_semestre + promedio_decimo_segundo_semestre) /2)/22;
-                        $scope.eleventh_annual_average =((promedio_undecimo_primer_semestre + promedio_undecimo_segundo_semestre) / 2) / 22;
-
-
                     }
                     else if (nota.curso === 'Promedio') {
-                        promedio_row = notas;
-
+                        promedio_row = nota;
                     }
+
                 });
-                alert('h');
+                
                 promedio_decimo_primer_semestre = Math.round(promedio_decimo_primer_semestre / ($scope.notas_decimo_undecimo.length - 1) * 100) / 100;
                 promedio_decimo_segundo_semestre = Math.round(promedio_decimo_segundo_semestre / ($scope.notas_decimo_undecimo.length - 1) * 100) / 100;
                 promedio_undecimo_primer_semestre = Math.round(promedio_undecimo_primer_semestre / ($scope.notas_decimo_undecimo.length - 1) * 100) / 100;
                 promedio_undecimo_segundo_semestre = Math.round(promedio_undecimo_segundo_semestre / ($scope.notas_decimo_undecimo.length - 1) * 100) / 100;
-                
                 promedio_row.nota_decimo_primer_semestre = promedio_decimo_primer_semestre;
                 promedio_row.nota_decimo_segundo_semestre = promedio_decimo_segundo_semestre;
                 promedio_row.nota_undecimo_primer_semestre = promedio_undecimo_primer_semestre;
                 promedio_row.nota_undecimo_segundo_semestre = promedio_undecimo_segundo_semestre;
-                
-
                 $scope.tenth_annual_average = Math.round((promedio_decimo_primer_semestre + promedio_decimo_segundo_semestre) / 2 * 100) / 100;
                 $scope.eleventh_annual_average = Math.round((promedio_undecimo_primer_semestre + promedio_undecimo_segundo_semestre) / 2 * 100) / 100;
             }
