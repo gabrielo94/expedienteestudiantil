@@ -14,8 +14,8 @@ angular.module('functionary-resume-experiences').controller('FunctionaryResumeEx
 				functionaryTitle: this.functionaryTitle,
 				companyLocation: this.companyLocation,
 				description: this.description,
-				attendedStartDate: this.attendedStartDate.year,
-				attendedEndDate: this.attendedEndDate.year
+				attendedStartDate: this.attendedStartDate,
+				attendedEndDate: this.attendedEndDate
 			});
 			// Redirect after save
 			functionaryResumeExperience.$save(function(response) {
@@ -106,8 +106,8 @@ angular.module('functionary-resume-experiences').controller('FunctionaryResumeEx
 			$scope.experience.functionaryTitle = $scope.functionaryTitle;
 			$scope.experience.companyLocation = $scope.companyLocation;
 			$scope.experience.description = $scope.description;
-			$scope.experience.attendedStartDate = $scope.attendedStartDate.year;
-			$scope.experience.attendedEndDate = $scope.attendedEndDate.year;
+			$scope.experience.attendedStartDate = $scope.attendedStartDate;
+			$scope.experience.attendedEndDate = $scope.attendedEndDate;
 			var experience = $scope.experience;
 			experience.$update(function() {
 				$scope.modalParent.dismiss();
@@ -158,29 +158,6 @@ angular.module('functionary-resume-experiences').controller('FunctionaryResumeEx
 			$scope.functionaryTitle = $scope.experience.functionaryTitle;
 			$scope.companyLocation = $scope.experience.companyLocation;
 			$scope.description = $scope.experience.description;
-			$scope.optionsYearRange.forEach(function (year) {
-				if ($scope.experience.attendedStartDate === year.year){
-					$scope.attendedStartDate = year;
-				}
-				if ($scope.experience.attendedEndDate === year.year){
-					$scope.attendedEndDate = year;
-				}
-			});
 		};
-
-		function generateyear(){
-			var startYear = 1950;
-			var currentYear = new Date().getFullYear(), years = [];
-			while ( startYear <= currentYear ) {
-				years.push({year: startYear});
-				startYear++;
-			}
-			return years;
-		};
-		$scope.optionsYearRange =generateyear();
-
-		$scope.attendedStartDate = $scope.optionsYearRange[$scope.optionsYearRange.length-2];
-		$scope.attendedEndDate = $scope.optionsYearRange[$scope.optionsYearRange.length-1];
-
 	}
 ]);

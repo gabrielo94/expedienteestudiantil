@@ -36,13 +36,13 @@ var FunctionaryResumeExperienceSchema = new Schema({
 	},
 
 	attendedStartDate: {
-		type: Number,
+		type: Date,
 		default: '',
 		required: 'Porfavor llene la fecha en que inicia a trabajar  en la compañia'
 	},
 
 	attendedEndDate: {
-		type: Number,
+		type: Date,
 		default: '',
 		required: 'Porfavor llene la fecha en que termina de trabajar en la compañia'
 	},
