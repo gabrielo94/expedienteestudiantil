@@ -13,8 +13,8 @@ angular.module('functionary-resume-educations').controller('FunctionaryResumeEdu
 				schoolName: this.schoolName,
 				description: this.description,
 				degree: this.degree,
-				attendedStartDate: this.attendedStartDate.year,
-				attendedEndDate: this.attendedEndDate.year
+				attendedStartDate: this.attendedStartDate,
+				attendedEndDate: this.attendedEndDate
 			});
 
 			// Redirect after save
@@ -23,8 +23,6 @@ angular.module('functionary-resume-educations').controller('FunctionaryResumeEdu
 				$scope.schoolName = '';
 				$scope.description = '';
 				$scope.degree = '';
-				$scope.attendedStartDate = '';
-				$scope.attendedEndDate = '';
 				$scope.functionaryEducations.push(functionaryResumeEducation);
 				$scope.modalParent.dismiss();
 			}, function(errorResponse) {
@@ -108,8 +106,8 @@ angular.module('functionary-resume-educations').controller('FunctionaryResumeEdu
 			$scope.education.schoolName = $scope.schoolName;
 			$scope.education.description = $scope.description;
 			$scope.education.degree = $scope.degree;
-			$scope.education.attendedStartDate = $scope.attendedStartDate.year;
-			$scope.education.attendedEndDate = $scope.attendedEndDate.year;
+			$scope.education.attendedStartDate = $scope.attendedStartDate;
+			$scope.education.attendedEndDate = $scope.attendedEndDate;
 			var education = $scope.education;
 			education.$update(function() {
                 $scope.modalParent.dismiss();
@@ -151,41 +149,15 @@ angular.module('functionary-resume-educations').controller('FunctionaryResumeEdu
 				$scope.loadEducationInfo();
 			}
 		});
-		function generateyear(){
-			var startYear = 1950;
-			var currentYear = new Date().getFullYear(), years = [];
-			while ( startYear <= currentYear ) {
-				years.push({year: startYear});
-				startYear++;
-			}
-
-			return years;
-		};
-		$scope.optionsYearRange = generateyear();
-		
-
 
 		$scope.loadEducationInfo = function (){
 			$scope.schoolName = $scope.education.schoolName;
 			$scope.description = $scope.education.description;
 			$scope.degree = $scope.education.degree;
-
-			$scope.optionsYearRange.forEach(function (year) {
-				if ($scope.education.attendedStartDate === year.year){
-					$scope.attendedStartDate = year;
-				}
-				if ($scope.education.attendedEndDate === year.year){
-					$scope.attendedEndDate = year;
-				}
-			});
 		};
 
 		$scope.cancel = function () {
 			$scope.modalParent.dismiss();
 		};
-
-		
-		$scope.attendedStartDate = $scope.optionsYearRange[$scope.optionsYearRange.length-2];
-		$scope.attendedEndDate = $scope.optionsYearRange[$scope.optionsYearRange.length-1];
 	}
 ]);

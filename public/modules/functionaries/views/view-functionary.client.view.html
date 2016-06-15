@@ -361,7 +361,7 @@
 										<h4 class="list-group-item-heading">{{'Universidad: ' + education.schoolName}}</h4>
 										<h4 class="list-group-item-heading">{{'Grado: ' + education.degree}}</h4>
 										<h4 class="list-group-item-heading">{{'Descripción: ' + education.description}}</h4>
-										<h4 class="list-group-item-heading">{{'Fecha: ' + education.attendedStartDate + ' - ' + education.attendedEndDate}}</h4>
+										<h4 class="list-group-item-heading">{{'Fecha: ' + (education.attendedStartDate.replace("00:00:00","06:00:00") | date:'dd/MM/yyyy') + ' - ' + (education.attendedEndDate.replace("00:00:00","06:00:00") | date:'dd/MM/yyyy')}}</h4>
 									</h4>
 								</div>
 							</div>
@@ -390,7 +390,9 @@
 										<h4 class="list-group-item-heading">{{'Compañía: ' + xp.companyName}}</h4>
 										<h4 class="list-group-item-heading">{{'Ubicación de la compañía: ' + xp.companyLocation}}</h4>
 										<h4 class="list-group-item-heading">{{'Rol: ' + xp.functionaryTitle}}</h4>
-										<h4 class="list-group-item-heading">{{'Fecha: ' + xp.attendedStartDate + ' - ' + xp.attendedEndDate}}</h4>
+										<h4 class="list-group-item-heading">{{'Fecha: ' + 
+										(xp.attendedStartDate.replace("00:00:00","06:00:00") | date:'dd/MM/yyyy') + ' - ' + 
+										(xp.attendedEndDate.replace("00:00:00","06:00:00") | date:'dd/MM/yyyy')}}</h4> 
 									</h4>
 								</div>
 							</div>

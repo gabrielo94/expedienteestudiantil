@@ -22,18 +22,14 @@
 
                     <label class="control-label" charset="UTF-8" for="attendedstartdate">A&#241;o de inicio</label>
                     <div class="controls">
-                        <select class="form-control" data-ng-model="attendedStartDate" id="attendedstartdate"
-                                ng-options="year as year.year for year in optionsYearRange" required>
-                            <option selected="selected">3</option>
-                        </select>
+                        <input class="date" type="date" data-ng-model="attendedStartDate" id="attendedstartdate" required />
                     </div>
 
-                    <label class="control-label" for="attendedenddate">A&#241;o de graduación</label>
+                    <label class="control-label" for="attendedenddate">A&#241;o de graduacion</label>
                     <div class="controls">
-                        <select class="form-control" data-ng-model="attendedEndDate" id="attendedenddate"
-                                ng-options="year as year.year for year in optionsYearRange" required>
-                        </select>
+                        <input class="date" type="date" data-ng-model="attendedEndDate" id="attendedenddate" required />
                     </div>
+                    
                     <div class="modal-footer">
                         <input type="submit" value="Agregar" class="btn btn-success">
                         <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
