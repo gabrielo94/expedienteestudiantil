@@ -44,7 +44,7 @@ var EstudianteSchema = new Schema({
     },
     telefono_casa: {
         type: String,
-        required: 'Teléfono de la casa del estudiante',
+        //required: 'Teléfono de la casa del estudiante',
         trim: true
     },
     celular: {
@@ -110,6 +110,14 @@ var EstudianteSchema = new Schema({
     },
     fecha_traladado: {
         type: Date,
+        trim: true
+    },
+    destino_traladado: {
+        type: String,
+        trim: true
+    },
+    motivo_traladado: {
+        type: String,
         trim: true
     },
     colegio_procedencia: {

@@ -67,7 +67,7 @@ var FunctionarySchema = new Schema({
 	phoneNumber: {
 		type: String,
 		default: '',
-		required: 'Porfavor llene el telefono del funcionario',
+		//required: 'Porfavor llene el telefono del funcionario',
 		trim: true
 	},
 

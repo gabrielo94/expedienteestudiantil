@@ -110,7 +110,7 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
                 if(colegio === 'Otro'){
                     colegio = $scope.colegio_procedencia_nuevo;
                 }
-                admitido = $scope.anno_ingreso;
+                admitido = false;
                 var estudiante = new Estudiantes ({
                     name: $scope.name,
                     primer_apellido: $scope.primer_apellido,
@@ -504,27 +504,27 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
                 {curso: 'Conducta', nota_setimo: 0, nota_octavo: 0, nota_noveno_primer_trimestre: 0, nota_noveno_segundo_trimestre: 0},
                 {curso: 'Promedio', nota_setimo: 0, nota_octavo: 0, nota_noveno_primer_trimestre: 0, nota_noveno_segundo_trimestre: 0}];
             $scope.notas_decimo_undecimo = [
-                {curso: 'Español', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Matemáticas', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Física', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Química', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Biología', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Biotecnología', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Computación', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Robótica', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Dibujo Técnico', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Inglés', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Investigación', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Historia', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Geografía', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Educ. Religiosa', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Educ. Cívica', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Educ. Física', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Matemática(PROF.)', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Física(PROF.)', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Química(PROF.)', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Biología(PROF.)', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
-                {curso: 'Conducta', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0},
+                {curso: 'Español', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Matemáticas', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Física', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Química', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Biología', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Biotecnología', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Computación', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Robótica', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Dibujo Técnico', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Inglés', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Investigación', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Historia', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Geografía', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Educ. Religiosa', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Educ. Cívica', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Educ. Física', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Matemática(PROF.)', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Física(PROF.)', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Química(PROF.)', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Biología(PROF.)', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
+                {curso: 'Conducta', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0,promedio_decimo:0,promedio_undecimo:0},
                 {curso: 'Promedio', nota_decimo_primer_semestre: 0, nota_decimo_segundo_semestre: 0, nota_undecimo_primer_semestre: 0, nota_undecimo_segundo_semestre: 0}];
             $scope.initGridOptions();
         };
@@ -634,7 +634,17 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
                         width: width,
                         cellClass: 'grid-align',
                         editableCellTemplate:'<input type="number" ng-class="\'colt\' + col.index"  min="1" max="100" ng-input="COL_FIELD" ng-model="COL_FIELD" >',
-                        cellTemplate:'<div class="ngCellText" ng-class="{\'red\' : row.getProperty(\'nota_undecimo_segundo_semestre\') <70 && row.getProperty(\'nota_undecimo_segundo_semestre\') != 0,   \'green\' : row.getProperty(\'nota_undecimo_segundo_semestre\') >=70 && row.getProperty(\'nota_undecimo_segundo_semestre\') != 0  }">{{ row.getProperty(col.field) }}</div>'}]
+                        cellTemplate:'<div class="ngCellText" ng-class="{\'red\' : row.getProperty(\'nota_undecimo_segundo_semestre\') <70 && row.getProperty(\'nota_undecimo_segundo_semestre\') != 0,   \'green\' : row.getProperty(\'nota_undecimo_segundo_semestre\') >=70 && row.getProperty(\'nota_undecimo_segundo_semestre\') != 0  }">{{ row.getProperty(col.field) }}</div>'},
+                    {field:'promedio_decimo', displayName:'Decimo', enableCellEdit: $scope.editable,
+                        width: width,
+                        cellClass: 'grid-align',
+                        editableCellTemplate:'<input type="number" ng-class="\'colt\' + col.index"  min="1" max="100" ng-input="COL_FIELD" ng-model="COL_FIELD" >',
+                        cellTemplate:'<div class="ngCellText" ng-class="{\'red\' : row.getProperty(\'promedio_decimo\') <70 && row.getProperty(\'promedio_decimo\') != 0,   \'green\' : row.getProperty(\'promedio_decimo\') >=70 && row.getProperty(\'promedio_decimo\') != 0  }">{{ row.getProperty(col.field) }}</div>'},
+                    {field:'promedio_undecimo', displayName:'Undecimo', enableCellEdit: $scope.editable,
+                        width: width,
+                        cellClass: 'grid-align',
+                        editableCellTemplate:'<input type="number" ng-class="\'colt\' + col.index"  min="1" max="100" ng-input="COL_FIELD" ng-model="COL_FIELD" >',
+                        cellTemplate:'<div class="ngCellText" ng-class="{\'red\' : row.getProperty(\'promedio_undecimo\') <70 && row.getProperty(\'promedio_undecimo\') != 0,   \'green\' : row.getProperty(\'promedio_undecimo\') >=70 && row.getProperty(\'promedio_undecimo\') != 0  }">{{ row.getProperty(col.field) }}</div>'}]
             };
         };
 
@@ -733,7 +743,7 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
                     columnDefs: [{ field: 'name', displayName:'Nombre'},
                         { field: 'nacionalidad', displayName:'Cédula'},
                         { field: 'anno_ingreso', displayName:'Año',cellTemplate: '<div class="ngCellText">{{row.getProperty(col.field) | anno}}</div>'},
-                        { field: 'traladado', displayName:'Trasladar', cellTemplate: '<input type="checkbox" ng-model="row.entity.traladado">'},
+                        { field: 'traladado', displayName:'Trasladar', cellTemplate: '<button class="btn btn-info"><a href= "#trasladarPopUp" ng-click="enviarEstudiante(row.entity)" data-toggle="modal">Trasladar</a></button>'},
                         { field: '_id', displayName:'Ver', cellTemplate: '<a data-ng-href="#!/estudiantes/{{row.entity._id}}">ver</a>'}]
                 };
             }
@@ -744,11 +754,12 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
             var promedio_decimo_segundo_semestre = 0;
             var promedio_undecimo_primer_semestre = 0;
             var promedio_undecimo_segundo_semestre = 0;
+            var espaP;
             var promedio_row = 0;
             if($scope.notas_decimo_undecimo.length !== 0) {
                 angular.forEach($scope.notas_decimo_undecimo, function (nota) {
                     if (nota.curso !== 'Promedio') {
-                        if(nota.nota_decimo_primer_semestre === undefined){
+                        if(nota.nota_decimo_primer_semestre === undefined){     
                             nota.nota_decimo_primer_semestre = 0;
                         }
                         if(nota.nota_decimo_segundo_semestre === undefined){
@@ -760,6 +771,16 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
                         if(nota.nota_undecimo_segundo_semestre === undefined){
                             nota.nota_undecimo_segundo_semestre = 0;
                         }
+                        if(nota.promedio_decimo===undefined){
+                            nota.promedio_decimo=0;
+                        }
+                        if(nota.promedio_undecimo===undefined){
+                            nota.promedio_undecimo=0;
+                        }
+                        
+                        nota.promedio_decimo=(nota.nota_decimo_primer_semestre+nota.nota_decimo_segundo_semestre)/2;
+                        nota.promedio_undecimo=(nota.nota_undecimo_primer_semestre+nota.nota_undecimo_segundo_semestre)/2;
+                        
                         promedio_decimo_primer_semestre += nota.nota_decimo_primer_semestre;
                         promedio_decimo_segundo_semestre += nota.nota_decimo_segundo_semestre;
                         promedio_undecimo_primer_semestre += nota.nota_undecimo_primer_semestre;
@@ -768,7 +789,9 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
                     else if (nota.curso === 'Promedio') {
                         promedio_row = nota;
                     }
+
                 });
+                
                 promedio_decimo_primer_semestre = Math.round(promedio_decimo_primer_semestre / ($scope.notas_decimo_undecimo.length - 1) * 100) / 100;
                 promedio_decimo_segundo_semestre = Math.round(promedio_decimo_segundo_semestre / ($scope.notas_decimo_undecimo.length - 1) * 100) / 100;
                 promedio_undecimo_primer_semestre = Math.round(promedio_undecimo_primer_semestre / ($scope.notas_decimo_undecimo.length - 1) * 100) / 100;
@@ -782,6 +805,7 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
             }
         };
 
+           
         $scope.matricular = function(){
             var estudiantes = $scope.estudiantes;
             angular.forEach(estudiantes, function (estudiante) {
@@ -792,16 +816,24 @@ angular.module('estudiantes').controller('EstudiantesController', ['$scope', '$s
             });
         };
 
+        var trasladandoE;
+
+        $scope.enviarEstudiante = function(estudiante){
+            trasladandoE = estudiante;
+        }
+
         $scope.trasladar = function(){
-            var estudiantes = $scope.estudiantes;
-            angular.forEach(estudiantes, function (estudiante) {
-                if(estudiante.traladado) {
-                    estudiante.fecha_traladado = new Date(). getDate();
-                    Estudiantes.update({ estudianteId: estudiante._id }, estudiante).$promise.then(function (estudiante) {
-                        location.reload();
-                    });
-                }
-            });
+            var estudiante = trasladandoE;
+            estudiante.traladado = true;
+            var dat = document.getElementById("fechaTraslado");
+            estudiante.fecha_traladado = dat.value;
+            var col = document.getElementById("colegioDestinoList");
+            estudiante.destino_traladado = col.options[col.selectedIndex].text;
+            var mot = document.getElementById("motivoTraslado");
+            estudiante.motivo_traladado = mot.value;
+            Estudiantes.update({ estudianteId: estudiante._id }, estudiante).$promise.then(function (estudiante) {
+                location.reload();
+            });    
         };
 
         $scope.asignar_notas = function(){

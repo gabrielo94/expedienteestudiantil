@@ -119,6 +119,28 @@ exports.admitidoss = function(req, res, next, admitido) {
     }
 };
 
+/**
+ * Estudiante middleware
+ */
+exports.noadmitidoss = function(req, res, next, admitido) {
+    if(admitido === 'false') {
+        Estudiante.find({admitido: false, traladado: false, anno_ingreso: {$in: [new Date().getFullYear(), new Date().getFullYear() - 1]}}).populate('user', 'displayName').exec(function (err, estudiante) {
+            if (err) return next(err);
+            if (!estudiante) return next(new Error('Failed to load Estudiante '));
+            req.estudiante = estudiante;
+            next();
+        });
+    }
+    else{
+        Estudiante.find({admitido: false    , traladado: false, anno_ingreso: new Date().getFullYear()}).populate('user', 'displayName').exec(function(err, estudiante) {
+            if (err) return next(err);
+            if (! estudiante) return next(new Error('Failed to load Estudiante '));
+            req.estudiante = estudiante ;
+            next();
+        });
+    }
+};
+
 
 /**
  * Estudiante middleware
